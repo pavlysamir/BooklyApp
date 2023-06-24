@@ -14,19 +14,14 @@ class BooklyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context)  {
+  Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
-       theme: ThemeData.dark().copyWith(
-           scaffoldBackgroundColor:  kPrimaryKey,
-           textTheme: GoogleFonts.montserratTextTheme(
-               ThemeData.dark().textTheme
-           ),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: kPrimaryKey,
+        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
       ),
-
     );
   }
 }
-
-
