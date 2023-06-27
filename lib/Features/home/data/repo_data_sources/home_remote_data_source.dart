@@ -1,6 +1,9 @@
 import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/api_services.dart';
+import 'package:hive/hive.dart';
 
+import '../../../../core/functions/save_box.dart';
 import '../../domain/entities/book_entity.dart';
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
@@ -13,6 +16,8 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
         endPoint: 'volumes?Filtering=free-ebooks&q=computer science');
 
     List<BookEntity> books = getBooksList(data);
+
+    saveBooksData(books, kFeaturedBooks);
     return books;
   }
 
