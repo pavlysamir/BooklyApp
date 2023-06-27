@@ -9,7 +9,7 @@ class FetchFeatureBooksUseCase extends UseCase {
   FetchFeatureBooksUseCase(this.homeRepo);
 
   @override
-  Future<Either<Failuer, dynamic>> call() {
-    return homeRepo.fetchFeatureBooks();
+  Future<Either<Failuer, dynamic>> call() async {
+    return await homeRepo.fetchFeatureBooks();
   }
 }
