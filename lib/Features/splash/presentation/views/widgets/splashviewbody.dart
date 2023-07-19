@@ -3,8 +3,6 @@ import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../constants.dart';
-
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
 
@@ -23,9 +21,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     initSliderAnimation();
     NavigateToHome();
   }
-
-
-
 
   @override
   void dispose() {
@@ -59,25 +54,18 @@ class _SplashViewBodyState extends State<SplashViewBody>
         ),
       ],
     );
-
-
   }
 
   void initSliderAnimation() {
     animationController =
-        AnimationController(
-            vsync: this,
-            duration: const Duration(seconds: 1)
-        );
-    animation = Tween<Offset>(
-        begin: const Offset(0, 2),
-        end: Offset.zero)
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    animation = Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
         .animate(animationController);
     animationController.forward();
   }
-  void NavigateToHome(){
-    Future.delayed(
-        const Duration(seconds: 2),(){
+
+  void NavigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
       // Get.to(()=>const HomeView() ,
       //     transition: Transition.fade ,
       //duration: kDuration);
