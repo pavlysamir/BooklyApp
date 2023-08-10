@@ -11,23 +11,20 @@ class CustomTextField extends StatelessWidget {
           enabledBorder: outlineInputBorder(),
           focusedBorder: outlineInputBorder(),
           hintText: 'Search',
-          suffixIcon:const Opacity(
+          suffixIcon: const Opacity(
             opacity: 0.8,
-            child: Icon(FontAwesomeIcons.magnifyingGlass,
-              size: 24,),
+            child: Icon(
+              FontAwesomeIcons.magnifyingGlass,
+              size: 24,
+            ),
           )),
     );
   }
-
-
 }
 
-
-OutlineInputBorder outlineInputBorder(){
+OutlineInputBorder outlineInputBorder() {
   return OutlineInputBorder(
-    borderSide:const BorderSide(
-        color: Colors.white
-    ),
+    borderSide: const BorderSide(color: Colors.white),
     borderRadius: BorderRadius.circular(12),
   );
 }

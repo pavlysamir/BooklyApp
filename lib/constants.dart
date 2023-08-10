@@ -5,4 +5,3 @@ const kDuration = Duration(milliseconds: 250);
 const kGtsectraFine = 'GT Sectra Fine';
 const kFeaturedBox = 'Featured Box';
 const kNewsBox = 'News Box';
-

@@ -11,9 +11,9 @@ class SectionSimilarListView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('You can also like' ,
-          style: Styles.textStyle16
-              .copyWith(fontWeight: FontWeight.w600),
+        Text(
+          'You can also like',
+          style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
         ),
         const SizedBox(
           height: 16,
