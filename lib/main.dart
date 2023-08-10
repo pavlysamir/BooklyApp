@@ -1,5 +1,3 @@
-import 'package:bookly_app/Features/home/data/repo_data_sources/home_local_data_source.dart';
-import 'package:bookly_app/Features/home/data/repo_data_sources/home_remote_data_source.dart';
 import 'package:bookly_app/Features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/Features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/Features/home/domain/usecases/fetch_feature_books_use_case.dart';
@@ -40,7 +38,7 @@ class BooklyApp extends StatelessWidget {
               FetchFeatureBooksUseCase(
                 getIt.get<HomeRepoImpl>(),
               ),
-            );
+            )..fetchFeaturedBooks();
           },
         ),
         BlocProvider(

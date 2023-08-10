@@ -25,7 +25,7 @@ class BookModel extends BookEntity {
     this.accessInfo,
     this.searchInfo,
   }) : super(
-            image: volumeInfo?.imageLinks?.thumbnail ?? '',
+            image: volumeInfo?.imageLinks!.thumbnail ?? '',
             title: volumeInfo!.title!,
             authorName: volumeInfo.authors?.first ?? 'No name',
             price: 0.0,

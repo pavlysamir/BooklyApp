@@ -15,13 +15,16 @@ class SectionBookDetailsView extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width*0.2),
-          child: const CustomBookImage(),
+          padding: EdgeInsets.symmetric(horizontal: width * 0.2),
+          child: const CustomBookImage(
+            image: '',
+          ),
         ),
         const SizedBox(
           height: 34,
         ),
-        const Text('The Jungle Book',
+        const Text(
+          'The Jungle Book',
           style: Styles.textStyle30,
         ),
         const SizedBox(
@@ -29,12 +32,12 @@ class SectionBookDetailsView extends StatelessWidget {
         ),
         Opacity(
           opacity: 0.7,
-          child: Text('Rudyard Kipling',
-            style: Styles.textStyle18.
-            copyWith(
+          child: Text(
+            'Rudyard Kipling',
+            style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,
-              color: Color(0xffFFFFFF),
+              color: const Color(0xffFFFFFF),
             ),
           ),
         ),

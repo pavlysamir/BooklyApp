@@ -11,7 +11,7 @@ class CustomPriceBookDetails extends StatelessWidget {
       children: [
         Expanded(
           child: CustomButton(
-            onTap: (){},
+            onTap: () {},
             text: '19.99€',
             backGroundColor: Colors.white,
             textColor: Colors.black,
@@ -19,13 +19,12 @@ class CustomPriceBookDetails extends StatelessWidget {
         ),
         Expanded(
           child: CustomButton(
-            onTap: (){},
+            onTap: () {},
             text: 'Free preview',
-            backGroundColor: Color(0xffEF8262),
-            borderRadius:const BorderRadius.only(
+            backGroundColor: const Color(0xffEF8262),
+            borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(12),
-              bottomRight: Radius.circular(12)
-            ),
+                bottomRight: Radius.circular(12)),
             textColor: Colors.white,
           ),
         ),

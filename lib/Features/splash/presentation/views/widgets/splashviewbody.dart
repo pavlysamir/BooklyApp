@@ -19,12 +19,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initSliderAnimation();
-    NavigateToHome();
+    navigateToHome();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     animationController.dispose();
     super.dispose();
   }
@@ -64,7 +63,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController.forward();
   }
 
-  void NavigateToHome() {
+  void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
       // Get.to(()=>const HomeView() ,
       //     transition: Transition.fade ,
