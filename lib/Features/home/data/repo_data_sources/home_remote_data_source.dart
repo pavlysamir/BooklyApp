@@ -1,8 +1,9 @@
-import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
+
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/api_services.dart';
 import '../../../../core/functions/save_box.dart';
 import '../../domain/entities/book_entity.dart';
+import '../models/models/bookModel.dart';
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   final ApiServices apiServices;
