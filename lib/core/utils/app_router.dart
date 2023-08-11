@@ -4,6 +4,8 @@ import 'package:bookly_app/Features/search/presentation/views/search_view.dart';
 import 'package:bookly_app/Features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../Features/home/domain/entities/book_entity.dart';
+
 abstract class AppRouter {
   static const kHomeView = '/HomeView';
   static const kBookDetails = '/BookDetails/:index';
@@ -20,7 +22,8 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kBookDetails,
-        builder: (context, state) => const BookDetailsView(),
+        builder: (context, state) =>
+            BookDetailsView(bookEntity: state.extra as BookEntity),
       ),
       GoRoute(
         path: kSearchView,

@@ -19,6 +19,7 @@ class BestSellerListView extends StatelessWidget {
             price: books[index].price ?? 0,
             rating: books[index].rating,
             title: books[index].title,
+            bookEntity: books[index],
           );
         });
   }

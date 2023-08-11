@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../home/presentation/views/widgets/best_seller_listview_item.dart';
 import 'custom_search_textfeild.dart';
 
 class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({Key? key}) : super(key: key);
+  const SearchViewBody({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,10 @@ class SearchViewBody extends StatelessWidget {
 }
 
 class SearchListView extends StatelessWidget {
-  const SearchListView({Key? key}) : super(key: key);
+  const SearchListView({
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -40,13 +44,14 @@ class SearchListView extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const BestsellerListViewItem(
-            author: 'ahmed',
-            image: '',
-            price: 100,
-            rating: 5,
-            title: '',
-          );
+          return const Text('hello');
+          // BestsellerListViewItem(
+          // author: 'ahmed',
+          // image: '',
+          // price: 100,
+          //rating: 5,
+          // title: '',
+          // );
         });
   }
 }

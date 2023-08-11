@@ -2,8 +2,9 @@ import 'package:bookly_app/core/utils/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class CustomPriceBookDetails extends StatelessWidget {
-  const CustomPriceBookDetails({Key? key}) : super(key: key);
-
+  const CustomPriceBookDetails({Key? key, required this.price})
+      : super(key: key);
+  final num price;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -12,7 +13,7 @@ class CustomPriceBookDetails extends StatelessWidget {
         Expanded(
           child: CustomButton(
             onTap: () {},
-            text: '19.99€',
+            text: '$price€',
             backGroundColor: Colors.white,
             textColor: Colors.black,
           ),

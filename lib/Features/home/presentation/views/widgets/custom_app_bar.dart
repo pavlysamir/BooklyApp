@@ -6,7 +6,9 @@ import 'package:go_router/go_router.dart';
 import '../../../../../core/utils/assets.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
+  const CustomAppBar({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,9 @@ class CustomAppBar extends StatelessWidget {
           const Spacer(),
           IconButton(
               onPressed: () {
-                GoRouter.of(context).push(AppRouter.kSearchView);
+                GoRouter.of(context).push(
+                  AppRouter.kSearchView,
+                );
               },
               icon: const Icon(
                 FontAwesomeIcons.magnifyingGlass,

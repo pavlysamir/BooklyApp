@@ -5,7 +5,9 @@ import 'custom_app_bar.dart';
 import 'featured_books_listview_bloc_builder.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({Key? key}) : super(key: key);
+  const HomeViewBody({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
+import '../../../domain/entities/book_entity.dart';
 import 'book_rating.dart';
 
 class BestsellerListViewItem extends StatelessWidget {
@@ -14,18 +15,20 @@ class BestsellerListViewItem extends StatelessWidget {
     required this.author,
     required this.rating,
     required this.price,
+    required this.bookEntity,
   }) : super(key: key);
   final String image;
   final String title;
   final String author;
   final num rating;
   final num price;
+  final BookEntity bookEntity;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetails);
+        GoRouter.of(context).push(AppRouter.kBookDetails, extra: bookEntity);
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 20),
