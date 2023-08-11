@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({Key? key}) : super(key: key);
+  const BookRating({Key? key, required num rating}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

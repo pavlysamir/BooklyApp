@@ -40,7 +40,13 @@ class SearchListView extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const BestsellerListViewItem();
+          return const BestsellerListViewItem(
+            author: 'ahmed',
+            image: '',
+            price: 100,
+            rating: 5,
+            title: '',
+          );
         });
   }
 }

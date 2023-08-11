@@ -4,7 +4,9 @@ import 'custom_bookdetails_app_bar.dart';
 import 'similar_section_listview.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({Key? key}) : super(key: key);
+  const BookDetailsViewBody({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
