@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../Features/home/presentation/managers/featured_books_cubit/featured_books_cubit.dart';
-
 SnackBar buildEroorMessage(String errorMessage) {
   return SnackBar(
     backgroundColor: Colors.red,
