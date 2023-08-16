@@ -5,16 +5,12 @@ import 'package:flutter/material.dart';
 class BookDetailsView extends StatelessWidget {
   const BookDetailsView({
     Key? key,
-    required this.bookEntity,
   }) : super(key: key);
 
-  final BookEntity bookEntity;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BookDetailsViewBody(
-        bookEntity: bookEntity,
-      ),
+    return const Scaffold(
+      body: BookDetailsViewBody(),
     );
   }
 }

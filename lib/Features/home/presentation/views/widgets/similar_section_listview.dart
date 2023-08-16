@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'similar_book_listview.dart';
 
 class SectionSimilarListView extends StatelessWidget {
-  const SectionSimilarListView({Key? key,required this.bookEntity}) : super(key: key);
-final List<BookEntity> bookEntity;
+  const SectionSimilarListView({Key? key, required this.books})
+      : super(key: key);
+  final List<BookEntity> books;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,7 +20,9 @@ final List<BookEntity> bookEntity;
         const SizedBox(
           height: 16,
         ),
-         SimilarBooksListView(books: bookEntity),
+        SimilarBooksListView(
+          books: books,
+        ),
       ],
     );
   }

@@ -1,4 +1,3 @@
-import 'package:bookly_app/Features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -7,9 +6,8 @@ import 'custom_book_item.dart';
 import 'custom_price_bookdetails.dart';
 
 class SectionBookDetailsView extends StatelessWidget {
-  const SectionBookDetailsView({Key? key, required this.bookEntity})
-      : super(key: key);
-  final BookEntity bookEntity;
+  const SectionBookDetailsView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -18,15 +16,15 @@ class SectionBookDetailsView extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.2),
-          child: CustomBookImage(
-            image: bookEntity.image ?? '', bookEntity: bookEntity,
+          child: const CustomBookImage(
+            image: '',
           ),
         ),
         const SizedBox(
           height: 34,
         ),
-        Text(
-          bookEntity.title,
+        const Text(
+          ' bookEntity.title',
           style: Styles.textStyle30,
         ),
         const SizedBox(
@@ -35,7 +33,7 @@ class SectionBookDetailsView extends StatelessWidget {
         Opacity(
           opacity: 0.7,
           child: Text(
-            bookEntity.authorName ?? 'UnKown',
+            'UnKown',
             style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,
@@ -46,14 +44,14 @@ class SectionBookDetailsView extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        BookRating(
-          rating: bookEntity.rating,
+        const BookRating(
+          rating: 5,
         ),
         const SizedBox(
           height: 35,
         ),
-        CustomPriceBookDetails(
-          price: bookEntity.price ?? 100,
+        const CustomPriceBookDetails(
+          price: 100,
         ),
       ],
     );

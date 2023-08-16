@@ -22,8 +22,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kBookDetails,
-        builder: (context, state) =>
-            BookDetailsView(bookEntity: state.extra as BookEntity),
+        builder: (context, state) => const BookDetailsView(),
       ),
       GoRoute(
         path: kSearchView,

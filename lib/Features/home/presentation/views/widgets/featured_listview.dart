@@ -60,7 +60,6 @@ class _FeaturedListViewState extends State<FeaturedListView> {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: CustomBookImage(
               image: widget.books[index].image ?? '',
-              bookEntity: widget.books[index],
             ),
           );
         },
