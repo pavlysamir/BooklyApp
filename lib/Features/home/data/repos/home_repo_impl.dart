@@ -16,14 +16,15 @@ class HomeRepoImpl extends HomeRepo {
   HomeRepoImpl(
       {required this.homeRemoteDataSource, required this.homeLocalDataSource});
   @override
-  Future<Either<Failuer, List<BookEntity>>> fetchFeatureBooks() async {
+  Future<Either<Failuer, List<BookEntity>>> fetchFeatureBooks(
+      {int pageNum = 0}) async {
     try {
       List<BookEntity> books;
-      books = homeLocalDataSource.fetchFeatureBooks();
+      books = homeLocalDataSource.fetchFeatureBooks(pageNum: pageNum);
       if (books.isNotEmpty) {
         return right(books);
       }
-      books = await homeRemoteDataSource.fetchFeatureBooks();
+      books = await homeRemoteDataSource.fetchFeatureBooks(pageNum: pageNum);
       return right(books);
     } catch (e) {
       // ignore: deprecated_member_use
@@ -35,14 +36,15 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failuer, List<BookEntity>>> fetchNewsBooks() async {
+  Future<Either<Failuer, List<BookEntity>>> fetchNewsBooks(
+      {int pageNum = 0}) async {
     try {
       List<BookEntity> books;
       books = homeLocalDataSource.fetchNewsBooks();
       if (books.isNotEmpty) {
         return right(books);
       }
-      books = await homeRemoteDataSource.fetchNewsBooks();
+      books = await homeRemoteDataSource.fetchNewsBooks(pageNum: pageNum);
       return right(books);
     } catch (e) {
       // ignore: deprecated_member_use

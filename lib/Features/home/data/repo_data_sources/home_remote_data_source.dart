@@ -4,14 +4,20 @@ import '../../../../core/functions/save_box.dart';
 import '../../domain/entities/book_entity.dart';
 import '../models/book_model/book_Model.dart';
 
+abstract class HomeRemoteDataSource {
+  Future<List<BookEntity>> fetchFeatureBooks({int pageNum = 0});
+  Future<List<BookEntity>> fetchNewsBooks({int pageNum = 0});
+}
+
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   final ApiServices apiServices;
 
   HomeRemoteDataSourceImpl(this.apiServices);
   @override
-  Future<List<BookEntity>> fetchFeatureBooks() async {
+  Future<List<BookEntity>> fetchFeatureBooks({int pageNum = 0}) async {
     var data = await apiServices.get(
-        endPoint: 'volumes?Filtering=free-ebooks&q=programming');
+        endPoint:
+            'volumes?Sorting=newest&q=programming&startIndex=${pageNum * 10}');
 
     List<BookEntity> books = getBooksList(data);
 
@@ -20,10 +26,10 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   }
 
   @override
-  Future<List<BookEntity>> fetchNewsBooks() async {
+  Future<List<BookEntity>> fetchNewsBooks({int pageNum = 0}) async {
     var data = await apiServices.get(
         endPoint:
-            'volumes?Filtering=free-ebooks&Sorting=newest&q=programming');
+            'volumes?Filtering=free-ebooks&Sorting=newest&q=programming&startIndex=${pageNum * 10}');
     List<BookEntity> newsBooks = getBooksList(data);
 
     saveBooksData(newsBooks, kNewsBox);
@@ -37,9 +43,4 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     }
     return books;
   }
-}
-
-abstract class HomeRemoteDataSource {
-  Future<List<BookEntity>> fetchFeatureBooks();
-  Future<List<BookEntity>> fetchNewsBooks();
 }

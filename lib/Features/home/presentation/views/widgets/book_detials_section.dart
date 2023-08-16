@@ -19,7 +19,7 @@ class SectionBookDetailsView extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.2),
           child: CustomBookImage(
-            image: bookEntity.image ?? '',
+            image: bookEntity.image ?? '', bookEntity: bookEntity,
           ),
         ),
         const SizedBox(
